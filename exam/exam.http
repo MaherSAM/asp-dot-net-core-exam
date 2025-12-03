@@ -1,0 +1,21 @@
+@exam_HostAddress = http://localhost:5275
+
+GET {{exam_HostAddress}}/api/users
+X-API-TOKEN:SuperSecretToken123
+Accept: application/json
+
+###
+GET {{exam_HostAddress}}/api/users/trigger-error
+X-API-TOKEN:SuperSecretToken123
+Content-Type: application/json
+
+###
+POST {{exam_HostAddress}}/api/users
+X-API-TOKEN:SuperSecretToken123
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "department": "Engineering"
+}
